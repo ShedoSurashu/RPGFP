@@ -16,10 +16,21 @@ package
 			if (GC.GI_FLASHPUNKCONSOLE) {
 				FP.console.enable();
 			}
+			
+			FP.log("Engine started.");
 		}
 		
 		override public function init():void {
+			if (stage.wmodeGPU) {
+				FP.log("GPU is used.");
+			} else {
+				FP.log("CPU is used.");
+			}
+			
+			FP.log("Setting up map(s)...");
 			RPGFP.MapSetup();
+			
+			
 		}
 	}
 }

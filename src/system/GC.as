@@ -19,7 +19,7 @@ package system
 		public static const GI_FPS:int = 60;
 		public static const GI_SCALE:int = 2;
 		// The minimum value for GI_SCALE is 1. Putting 0, will break it. 
-		public static const GI_FLASHPUNKCONSOLE = true;
+		public static const GI_FLASHPUNKCONSOLE:Boolean = true;
 		
 		public function GC(){}
 	}
