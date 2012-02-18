@@ -12,6 +12,8 @@ package system
 	public class RPGFP
 	{
 		public static var maps:Array = new Array();
+		public static var currentMapIndex:int = 0;
+		public static var currentMap:Map;
 		
 		public function RPGFP(){}
 		
@@ -23,10 +25,6 @@ package system
 			map = new Map(Maps.PARK_01);
 			map.index = 0;
 			maps.push(map);
-		}
-		
-		public static function MapLoad():void {
-			
 		}
 	}
 }

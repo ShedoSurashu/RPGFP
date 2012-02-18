@@ -46,7 +46,7 @@ package system
 		public static const AD_PLAYERSPRITEWIDTH:int = 32;
 		public static const AD_PLAYERSPRITEHEIGHT:int = 48;
 		public static const AD_PLAYERDEFAULTANIM:String = "stand_down";
-		public static const AD_PLAYERDEFAULTSPEED:int = 2;
+		public static const AD_PLAYERDEFAULTSPEED:int = 1;
 		
 		public function GC(){}
 	}

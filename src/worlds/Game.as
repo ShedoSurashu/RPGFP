@@ -28,9 +28,23 @@ package worlds
 		
 		public function Game()
 		{
-			player = new Player(new Point(50,50),new Spritemap(Actors.ACTOR_PLAYER, GC.AD_PLAYERSPRITEWIDTH, GC.AD_PLAYERSPRITEHEIGHT));
+			player = new Player(new Point(50,50));
 			
-			RPGFP.MapLoad();
+			MapLoad();
+		}
+		
+		
+		public function MapLoad():void {
+			add(player);
+			
+//			RPGFP.currentMap = RPGFP.maps[RPGFP.currentMapIndex];
+			
+//			add(new UnderGround(currentMap.xml,TILE_SET));
+//			FP.world.add(new Ground(currentMap.xml, TILE_SET));
+//			FP.world.add(new AboveGround(currentMap.xml, TILE_SET));
+//			FP.world.add(new Player(new Point(50,50)));
+//			FP.world.add(new AboveEntity(currentMap.xml, TILE_SET));
+//			FP.world.add(new AboveAll(currentMap.xml, TILE_SET));
 		}
 		
 	}
