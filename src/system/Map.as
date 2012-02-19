@@ -14,7 +14,6 @@ package system
 		public function Map(_resource:Class) {
 			resource = _resource;
 			xml = FP.getXML(resource);
-//			FP.log("Map: "+resource.toString());
 			
 			width = (xml.@width * xml.@tilewidth);
 			height = (xml.@height * xml.@tileheight);

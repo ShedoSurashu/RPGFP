@@ -17,8 +17,8 @@ package system
 	{
 		// Game Details
 		public static const GD_NAME:String = "Blaarpgh";
-		public static const GD_WIDTH:int = 800;
-		public static const GD_HEIGHT:int = 450;
+		public static const GD_WIDTH:int = 640;
+		public static const GD_HEIGHT:int = 480;
 		public static const GD_FPS:int = 60;
 		public static const GD_SCALE:int = 2; // Minimum value is 1. 
 		public static const GD_FLASHPUNKCONSOLE:Boolean = true;
@@ -46,7 +46,11 @@ package system
 		public static const AD_PLAYERSPRITEWIDTH:int = 32;
 		public static const AD_PLAYERSPRITEHEIGHT:int = 48;
 		public static const AD_PLAYERDEFAULTANIM:String = "stand_down";
-		public static const AD_PLAYERDEFAULTSPEED:int = 1;
+		public static const AD_PLAYERDEFAULTSPEED:int = 2;
+		
+		// Camera Details
+		public static const CD_OFFSET:int = 200;
+		public static const CD_SPEED:int = 2;
 		
 		public function GC(){}
 	}

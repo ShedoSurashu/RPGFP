@@ -32,7 +32,7 @@ package actors
 			y = position.y;
 			
 			// Temporary until I can think of a way to make this dynamic.
-			setHitbox(32,32,0,-16);
+			setHitbox(32,48,0,0);
 			
 		}
 		

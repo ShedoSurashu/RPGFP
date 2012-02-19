@@ -32,18 +32,29 @@ package worlds
 		public var currentMapIndex:int = 0;
 		public var currentMap:Map;
 		
+		// Camera
+		public var gameCamera:Camera;
+		
 		public function Game()
 		{
-			player = new Player(new Point(50,50));
-			npc_italy01 = new NPC(new Point(100,50));
+			player = new Player(new Point(500,250));
+//			npc_italy01 = new NPC(new Point(100,50));
 			maps = Maps.list;
+			
+			// Set default camera location
+			gameCamera = new Camera();
 			
 			MapLoad();
 		}
 		
+		override public function update():void {
+			gameCamera.followPlayer(currentMap.width, currentMap.height, player);
+			super.update();
+		}
 		
 		public function MapLoad():void {
 			currentMap = maps[currentMapIndex];
+			gameCamera.adjust(currentMap.width, currentMap.height, player);
 			
 			mapMarkerCollisions = new _Collisions(currentMap.xml);
 			mapMarkerTriggers = new _Triggers(currentMap.xml);
@@ -64,16 +75,8 @@ package worlds
 			add(player);
 			add(mapAboveEntity);
 			add(mapAboveAll);
-			FP.log("Character test started. Currently testing: America");
 			
-//			RPGFP.currentMap = RPGFP.maps[RPGFP.currentMapIndex];
-			
-//			add(new UnderGround(currentMap.xml,TILE_SET));
-//			FP.world.add(new Ground(currentMap.xml, TILE_SET));
-//			FP.world.add(new AboveGround(currentMap.xml, TILE_SET));
-//			FP.world.add(new Player(new Point(50,50)));
-//			FP.world.add(new AboveEntity(currentMap.xml, TILE_SET));
-//			FP.world.add(new AboveAll(currentMap.xml, TILE_SET));
+			FP.log("Map has been loaded.");
 		}
 		
 	}
