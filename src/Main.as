@@ -30,7 +30,7 @@ package
 			}
 			
 			FP.log("Setting up map(s)...");
-			RPGFP.MapSetup();
+			Maps.setup();
 			
 			FP.world = new Game;
 		}

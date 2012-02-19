@@ -17,14 +17,5 @@ package system
 		
 		public function RPGFP(){}
 		
-		// Setup all the maps needed in-game.
-		public static function MapSetup():void {
-			var map:Map;
-			
-			// PARK_01;
-			map = new Map(Maps.PARK_01);
-			map.index = 0;
-			maps.push(map);
-		}
 	}
 }

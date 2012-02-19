@@ -14,7 +14,7 @@ package actors
 	
 	public class Player extends Entity
 	{
-		public var playerSprite:Spritemap = new Spritemap(Actors.ACTOR_PLAYER, GC.AD_PLAYERSPRITEWIDTH, GC.AD_PLAYERSPRITEHEIGHT);
+		public var playerSprite:Spritemap = new Spritemap(Actors.PLAYER, GC.AD_PLAYERSPRITEWIDTH, GC.AD_PLAYERSPRITEHEIGHT);
 		
 		public var currentAnim:String = GC.AD_PLAYERDEFAULTANIM;
 		public var speed:int = GC.AD_PLAYERDEFAULTSPEED;

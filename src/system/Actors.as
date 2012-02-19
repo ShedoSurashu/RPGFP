@@ -6,10 +6,12 @@ package system
 	{
 		// PLAYER actor
 		[Embed(source="assets/sprites/player.png")]
-		public static const ACTOR_PLAYER:Class;
+		public static const PLAYER:Class;
 		
-		public function Actors() {
-			// Construct PLAYER actor
-		}
+		// NPC_ITALY01 actor
+		[Embed(source="assets/sprites/npc_italy01.png")]
+		public static const NPC_ITALY01:Class;
+		
+		public function Actors() {}
 	}
 }
