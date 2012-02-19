@@ -1,4 +1,5 @@
 ## RPGFP
+### A JRPG framework utilizing FlashPunk.
 
 I started this project at Feb 17, 2012 (GMT +8:00). Just recording the date. :)
 
