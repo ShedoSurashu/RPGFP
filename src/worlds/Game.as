@@ -37,8 +37,9 @@ package worlds
 		
 		public function Game()
 		{
+//			player = new Player(new Point(500,250));
 			player = new Player(new Point(500,250));
-//			npc_italy01 = new NPC(new Point(100,50));
+			npc_italy01 = new NPC(new Point(100,50));
 			maps = Maps.list;
 			
 			// Set default camera location
@@ -49,6 +50,9 @@ package worlds
 		
 		override public function update():void {
 			gameCamera.followPlayer(currentMap.width, currentMap.height, player);
+			mapAboveEntity.layer = -player.bottom;
+			mapAboveAll.layer = -(player.bottom+1);
+			FP.log(FP.screen.width);
 			super.update();
 		}
 		
@@ -65,16 +69,28 @@ package worlds
 			mapAboveEntity = new AboveEntity(currentMap.xml, Tilesets.NEWTOWN5);
 			mapAboveAll = new AboveAll(currentMap.xml, Tilesets.NEWTOWN5);
 			
+//			mapAboveAll.layer = 0;
+//			mapAboveEntity.layer = 1;
+//			player.layer = 3;
+//			npc_italy01.layer = 4;
+//			mapAboveGround.layer = 5;
+//			mapGround.layer = 6;
+//			mapUnderGround.layer = 7;
+//			mapMarkerCollisionTriggers.layer = 8;
+//			mapMarkerTriggers.layer = 9;
+//			mapMarkerCollisions.layer = 10;
+			
 			add(mapMarkerCollisions);
 			add(mapMarkerTriggers);
 			add(mapMarkerCollisionTriggers);
 			add(mapUnderGround);
 			add(mapGround);
 			add(mapAboveGround);
-//			add(npc_italy01);
 			add(player);
+			add(npc_italy01);
 			add(mapAboveEntity);
 			add(mapAboveAll);
+			FP.log("Layer: "+player.layer.toString());
 			
 			FP.log("Map has been loaded.");
 		}

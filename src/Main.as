@@ -7,7 +7,7 @@ package
 	
 	import worlds.*;
 	
-	[SWF(width="640", height="480", frameRate="60")]
+	[SWF(width="920", height="600", frameRate="60")]
 	public class Main extends Engine
 	{
 		public function Main()

@@ -17,8 +17,8 @@ package system
 	{
 		// Game Details
 		public static const GD_NAME:String = "Blaarpgh";
-		public static const GD_WIDTH:int = 640;
-		public static const GD_HEIGHT:int = 480;
+		public static const GD_WIDTH:int = 920;
+		public static const GD_HEIGHT:int = 600;
 		public static const GD_FPS:int = 60;
 		public static const GD_SCALE:int = 2; // Minimum value is 1. 
 		public static const GD_FLASHPUNKCONSOLE:Boolean = true;

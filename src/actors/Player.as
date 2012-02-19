@@ -3,6 +3,7 @@ package actors
 	import flash.geom.Point;
 	
 	import net.flashpunk.Entity;
+	import net.flashpunk.FP;
 	import net.flashpunk.Graphic;
 	import net.flashpunk.Mask;
 	import net.flashpunk.graphics.Spritemap;
@@ -23,6 +24,8 @@ package actors
 			
 			setupSprite();
 			
+			type = "player";
+			
 //			playerSprite = _playerSprite;
 			graphic = playerSprite;
 			
@@ -32,14 +35,13 @@ package actors
 			y = position.y;
 			
 			// Temporary until I can think of a way to make this dynamic.
-			setHitbox(32,48,0,0);
-			
+			setHitbox(32,32,0,-16);
 		}
 		
 		public function colliding(position:Point):Boolean {
 			// Check for collision against any of the existing tile types.
-			var tileType:String = "tile_collision";
-			if (collide(tileType, position.x, position.y)) {
+			if (collide("tile_collision", position.x, position.y) ||
+				collide("npc", position.x, position.y)) {
 				return true;
 			} else {
 				return false;
@@ -47,6 +49,9 @@ package actors
 		}
 		
 		override public function update():void {
+			
+			layer = -y;
+//			FP.log(layer.toString());
 			
 			playerSprite.play(currentAnim);
 			

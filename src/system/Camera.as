@@ -11,8 +11,8 @@ package system
 		public function Camera(){}
 		
 		public function adjust(mapWidth:int, mapHeight:int, player:Player):void {
-			var newCameraX:int = ((player.x + player + player.width)/2) - (FP.width/2);
-			var newCameraY:int = ((player.y + player + player.height)/2) - (FP.height/2);
+			var newCameraX:int = ((player.x + player.width)/2) - (FP.width/2);
+			var newCameraY:int = ((player.y + player.height)/2) - (FP.height/2);
 			
 			// Checks for outbound locations then sets them inside the limit.
 			if (newCameraX < 0) {
@@ -59,7 +59,8 @@ package system
 			}
 			
 			
-			FP.log("Camera: x="+FP.camera.x.toString()+" y="+FP.camera.y.toString());
+//			FP.log("Camera: x="+FP.camera.x.toString()+" y="+FP.camera.y.toString());
+//			FP.log(FP.width.toString()+" "+mapHeight.toString()+" Sprite: x="+player.x.toString()+" y="+(player.y + (-player.originY)+ player.height).toString());
 			
 		}
 	}

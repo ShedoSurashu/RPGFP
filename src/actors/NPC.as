@@ -3,6 +3,7 @@ package actors
 	import flash.geom.Point;
 	
 	import net.flashpunk.Entity;
+	import net.flashpunk.FP;
 	import net.flashpunk.Graphic;
 	import net.flashpunk.Mask;
 	import net.flashpunk.graphics.Spritemap;
@@ -22,6 +23,8 @@ package actors
 		public function NPC(position:Point) {
 			
 			setupSprite();
+			
+			type = "npc";
 			
 			graphic = npcSprite;
 			
@@ -45,52 +48,8 @@ package actors
 			}
 		}
 		
-		override public function update():void {
-			
-//			npcSprite.play(currentAnim);
-//			
-//			if (Input.check("walk_right")) {
-//				
-//				if (!colliding(new Point(x + speed, y))) {
-//					currentAnim = "walk_right";
-//					x += speed;
-//				}
-//				
-//			} else if (Input.check("walk_left")) {
-//				
-//				if (!colliding(new Point(x - speed, y))) {
-//					currentAnim = "walk_left";
-//					x -= speed;
-//				}
-//				
-//			} else if (Input.check("walk_down")) {
-//				
-//				if (!colliding(new Point(x, y + speed))) {
-//					currentAnim = "walk_down";
-//					y += speed;
-//				}
-//				
-//			} else if (Input.check("walk_up")) {
-//				
-//				if (!colliding(new Point(x, y - speed))) {
-//					currentAnim = "walk_up";
-//					y -= speed;
-//				}
-//				
-//			}
-//			
-//			
-//			// CHeck if the buttons have been released.
-//			if (Input.released("walk_right")) {
-//				currentAnim = "stand_right";
-//			} else if (Input.released("walk_left")) {
-//				currentAnim = "stand_left";
-//			} else if (Input.released("walk_down")) {
-//				currentAnim = "stand_down";
-//			} else if (Input.released("walk_up")) {
-//				currentAnim = "stand_up";
-//			}
-			
+		override public function update():void {			
+			layer = -y;
 		}
 		
 		public function setupSprite():void {
