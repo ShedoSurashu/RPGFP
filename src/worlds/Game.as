@@ -45,16 +45,22 @@ package worlds
 		public function MapLoad():void {
 			currentMap = maps[currentMapIndex];
 			
+			mapMarkerCollisions = new _Collisions(currentMap.xml);
+			mapMarkerTriggers = new _Triggers(currentMap.xml);
+			mapMarkerCollisionTriggers = new _CollisionTriggers(currentMap.xml);
 			mapUnderGround = new UnderGround(currentMap.xml, Tilesets.NEWTOWN5);
 			mapGround = new Ground(currentMap.xml, Tilesets.NEWTOWN5);
 			mapAboveGround = new AboveGround(currentMap.xml, Tilesets.NEWTOWN5);
 			mapAboveEntity = new AboveEntity(currentMap.xml, Tilesets.NEWTOWN5);
 			mapAboveAll = new AboveAll(currentMap.xml, Tilesets.NEWTOWN5);
 			
+			add(mapMarkerCollisions);
+			add(mapMarkerTriggers);
+			add(mapMarkerCollisionTriggers);
 			add(mapUnderGround);
 			add(mapGround);
 			add(mapAboveGround);
-			add(npc_italy01);
+//			add(npc_italy01);
 			add(player);
 			add(mapAboveEntity);
 			add(mapAboveAll);

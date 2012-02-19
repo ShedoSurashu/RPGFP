@@ -31,6 +31,8 @@ package layers
 				
 				horizontalPos++;
 			}
+			
+			FP.log("AboveEntity layer generated.");
 		}
 	}
 }

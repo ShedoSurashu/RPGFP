@@ -31,6 +31,8 @@ package layers
 				
 				horizontalPos++;
 			}
+			
+			FP.log("AboveGround layer generated.");
 		}
 	}
 }

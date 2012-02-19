@@ -9,6 +9,7 @@ The class that defines the trigger areas on a map.
 package layers
 {
 	import net.flashpunk.Entity;
+	import net.flashpunk.FP;
 	import net.flashpunk.masks.Grid;
 	
 	import system.GC;
@@ -37,7 +38,11 @@ package layers
 					grid.setRect(horizontalInc, verticalInc, 1, 1, true);
 				}
 				
+				horizontalInc++;
+				
 			}
+			
+			FP.log("Trigger layer generated.");
 		}
 	}
 }

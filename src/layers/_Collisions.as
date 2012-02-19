@@ -9,6 +9,8 @@ The class that defines the collision areas on a map.
 package layers
 {
 	import net.flashpunk.Entity;
+	import net.flashpunk.FP;
+	import net.flashpunk.graphics.Image;
 	import net.flashpunk.masks.Grid;
 	
 	import system.GC;
@@ -26,6 +28,7 @@ package layers
 			
 			var horizontalInc:int = 0;
 			var verticalInc:int = 0;
+			var loopCounter:int = 0;
 			for each (var marker:XML in map.layer.(@name == "Markers").data.tile) {
 				
 				if (horizontalInc > (map.@width-1)) {
@@ -37,7 +40,11 @@ package layers
 					grid.setRect(horizontalInc, verticalInc, 1, 1, true);
 				}
 				
+				horizontalInc++;
+				
 			}
+			
+			FP.log("Collision layer generated.");
 		}
 	}
 }
